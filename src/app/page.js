@@ -38,7 +38,9 @@ export default function LandingPage () {
                             FAQ
                         </Link>
                         <Button className = "bg-[#00C9A7] hover:bg-[#00A389] text-white">
-                            Get Started
+                            <Link href = '/auth/signin'>
+                                Get Started
+                            </Link>
                         </Button>
                     </div>
 
@@ -108,7 +110,9 @@ export default function LandingPage () {
                         <Button
                             size = "lg"
                             className = "bg-[#00C9A7] hover:bg-[#00A389] text-white h-12 px-8">
-                            Get Started
+                            <Link href = '/auth/signin'>
+                                Get Started
+                            </Link>
                             <ArrowRight className = "ml-2 w-4 h-4" />
                         </Button>
 
@@ -168,18 +172,18 @@ export default function LandingPage () {
                 <div className = "flex justify-center">
                     <div className = "grid md:grid-cols-3 gap-10 md:gap-8 max-w-6xl w-full px-4 md:px-0">
                         {steps.map(( step, i ) => (<div
-                                key = {i}
-                                className = "flex flex-col items-center text-center space-y-5">
-                                <div className = "flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full">
-                                    <span className = "text-xl md:text-2xl font-semibold text-primary">{step.num}</span>
-                                </div>
-                                <div className = "space-y-2">
-                                    <h3 className = "text-lg md:text-xl font-semibold text-foreground">{step.title}</h3>
-                                    <p className = "text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                                        {step.desc}
-                                    </p>
-                                </div>
-                            </div>))}
+                            key = {i}
+                            className = "flex flex-col items-center text-center space-y-5">
+                            <div className = "flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full">
+                                <span className = "text-xl md:text-2xl font-semibold text-primary">{step.num}</span>
+                            </div>
+                            <div className = "space-y-2">
+                                <h3 className = "text-lg md:text-xl font-semibold text-foreground">{step.title}</h3>
+                                <p className = "text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                                    {step.desc}
+                                </p>
+                            </div>
+                        </div>))}
                     </div>
                 </div>
             </div>
@@ -224,7 +228,9 @@ export default function LandingPage () {
                         <Button
                             size = "lg"
                             className = "bg-white text-[#00A389] hover:bg-gray-100 h-12 px-8 mt-4">
+                            <Link href='/auth/signin'>
                             Start Free Today
+                            </Link>
                         </Button>
                     </CardContent>
                 </Card>
