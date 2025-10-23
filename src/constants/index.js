@@ -48,7 +48,7 @@ export const faqs = [{
     q: 'How does the image generation feature work?',
     a: 'You simply enter a text prompt, and the system uses advanced diffusion models to generate high-quality, creative visuals in seconds.'
 }, {
-    q: 'Can I enhance or edit my existing images?',
+    q: 'Can I enhance or edit-image my existing images?',
     a: 'Yes. The platform supports AI-powered upscaling, background fill, and intelligent outpainting to improve and modify images automatically.'
 }, {
     q: 'Does the platform support real-time AI features?',

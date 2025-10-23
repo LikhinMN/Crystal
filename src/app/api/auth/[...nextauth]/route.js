@@ -72,8 +72,7 @@ export const authOptions = {
             console.log("User signed in:", user.email)
         },
     },
-    debug: process.env.NODE_ENV === "development",
-    secret: process.env.NEXTAUTH_SECRET,
+    secret: process.env.AUTH_SECRET,
 }
 
 const handler = NextAuth(authOptions)
