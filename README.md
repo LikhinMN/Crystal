@@ -86,7 +86,7 @@ cd ./Crystal
 npm i
 npm run dev
 ````
-
+---
 <div align="center">
 
  Made with ❤️ by Code Crystal — bringing AI-powered creativity to life.
