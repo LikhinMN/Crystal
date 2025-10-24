@@ -61,7 +61,7 @@ export default function TextToImagePage() {
 
     const downloadImage = () => {
         if (!generatedImage) return;
-        
+
         const link = document.createElement('a');
         link.href = generatedImage;
         link.download = `generated-${Date.now()}.png`;
@@ -157,8 +157,8 @@ export default function TextToImagePage() {
                                     <p className="text-xs text-muted-foreground">Higher values = more aligned with prompt</p>
                                 </div>
 
-                                <Button 
-                                    onClick={generateImage} 
+                                <Button
+                                    onClick={generateImage}
                                     className="w-full mt-4 bg-[#00C9A7] hover:bg-[#00A389] text-white transition-colors"
                                     disabled={loading || !prompt.trim()}
                                     size="lg"
@@ -194,8 +194,8 @@ export default function TextToImagePage() {
                                     Generated Image
                                 </CardTitle>
                                 <CardDescription>
-                                    {generatedImage 
-                                        ? 'Your AI-generated masterpiece' 
+                                    {generatedImage
+                                        ? 'Your AI-generated masterpiece'
                                         : 'Your creation will appear here'}
                                 </CardDescription>
                             </CardHeader>
@@ -211,13 +211,13 @@ export default function TextToImagePage() {
                                         </div>
                                     ) : generatedImage ? (
                                         <div className="relative w-full h-full group">
-                                            <img 
-                                                src={generatedImage} 
-                                                alt="Generated from prompt" 
+                                            <img
+                                                src={generatedImage}
+                                                alt="Generated from prompt"
                                                 className="w-full h-full object-contain rounded-lg"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                                <Button 
+                                                <Button
                                                     variant="default"
                                                     size="sm"
                                                     onClick={downloadImage}

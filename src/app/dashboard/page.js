@@ -4,6 +4,7 @@ import { redirect } from "next/navigation"
 import { Image, Text, Wand2, Clock, Activity, Plus, History } from "lucide-react"
 import Link from "next/link"
 import Header from '@/components/landing-page/Header'
+import {getCurrentUser} from "@/lib/session";
 import React from "react";
 export default async function Dashboard() {
     const session = await getServerSession(authOptions)
