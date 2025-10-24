@@ -80,14 +80,13 @@ git clone https://github.com/LikhinMN/Crystal.git
 cd ./Crystal
 ````
 ---
-## ⚙️ Installation & Run
 
-### **1. Run**
+### **2. Run**
 ```bash
 npm i
 npm run dev
 ````
-
+---
 <div align="center">
 
  Made with ❤️ by Code Crystal — bringing AI-powered creativity to life.
