@@ -9,9 +9,50 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String   @id @default(cuid())
   email     String   @unique
   name      String?
   image     String?
   createdAt DateTime @default(now())
+  generations Generation[]
+  extractions Extraction[]
+  edits      ImageEdit[]
+  @@map("users")
+}
+
+model Generation {
+  id        String   @id @default(cuid())
+  userId    String
+  prompt    String   @db.Text
+  imageUrl  String
+  model     String
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId])
+  @@index([createdAt])
+  @@map("generations")
+}
+
+model Extraction {
+  id        String   @id @default(cuid())
+  userId    String
+  imageUrl  String
+  text      String   @db.Text
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId])
+  @@map("extractions")
+}
+
+model ImageEdit {
+  id            String   @id @default(cuid())
+  userId        String
+  originalImage String
+  editedImage   String
+  editType      String
+  createdAt     DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId])
+  @@map("image_edits")
 }

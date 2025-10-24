@@ -75,7 +75,7 @@ export default function ImageKitAITransformation() {
                     <span className="text-sm">Transform images with a single click</span>
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                    image analyzer
+                    image editing made easy
                 </h1>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                     Upload an image and let our AI analyze its content in detail.
