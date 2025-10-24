@@ -9,9 +9,9 @@ datasource db {
 }
 
 model User {
-  int       String   @id @default(cuid())
+  id        String   @id @default(uuid())
+  email     String   @unique
   name      String?
-  email     String?  @unique
   image     String?
   createdAt DateTime @default(now())
 }
