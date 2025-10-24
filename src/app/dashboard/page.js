@@ -3,7 +3,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import { redirect } from "next/navigation"
 import { Image, Text, Wand2, Clock, Activity, Plus, History } from "lucide-react"
 import Link from "next/link"
-import Header from '@/components/landing-page/Header'
+import { prisma } from "@/lib/prisma"
 import {getCurrentUser} from "@/lib/session";
 import React from "react";
 export default async function Dashboard() {
@@ -12,7 +12,18 @@ export default async function Dashboard() {
     if (!session) {
         redirect("/auth/signin")
     }
+    const user=getCurrentUser()
+    const usage_count = await prisma.usage.count({
+        where: {
+            userId: user.id
 
+        }
+    })
+    const usage = await prisma.usage.findMany({
+        where: {
+            userId: user.id
+        }
+    })
     const features = [
         {
             id: 'text-to-image',
@@ -21,7 +32,7 @@ export default async function Dashboard() {
             icon: <Text className="w-8 h-8 text-purple-500" />,
             bgColor: "bg-purple-50",
             textColor: "text-purple-600",
-            stats: "1.2K+",
+            stats: usage_count,
             statLabel: "Images generated"
         },
         {
@@ -31,7 +42,7 @@ export default async function Dashboard() {
             icon: <Image className="w-8 h-8 text-blue-500" />,
             bgColor: "bg-blue-50",
             textColor: "text-blue-600",
-            stats: "850+",
+            stats: usage_count-2,
             statLabel: "Images processed"
         },
         {
@@ -41,7 +52,7 @@ export default async function Dashboard() {
             icon: <Wand2 className="w-8 h-8 text-green-500" />,
             bgColor: "bg-green-50",
             textColor: "text-green-600",
-            stats: "620+",
+            stats: usage_count+1,
             statLabel: "Edits made"
         },
     ]
@@ -119,57 +130,6 @@ export default async function Dashboard() {
                             </div>
                         </Link>
                     ))}
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="lg:col-span-2 bg-card text-card-foreground rounded-lg border border-border p-6">
-                        <div className="flex items-center justify-between mb-4">
-                            <h2 className="text-lg font-semibold flex items-center">
-                                <Activity className="w-5 h-5 mr-2 text-primary" />
-                                Recent Activity
-                            </h2>
-                            <Link href="/dashboard/activity" className="text-sm text-primary hover:underline">View all</Link>
-                        </div>
-                        <div className="space-y-4">
-                            {recentActivity.map((activity) => (
-                                <div key={activity.id} className="flex items-start p-3 hover:bg-accent/50 rounded-lg transition-colors">
-                                    <div className="p-2 rounded-lg bg-accent/20 mr-3">
-                                        {activity.icon}
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-sm font-medium">{activity.title}</p>
-                                        <div className="flex items-center text-xs text-muted-foreground mt-1">
-                                            <Clock className="w-3 h-3 mr-1" />
-                                            {activity.time}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Quick Actions */}
-                    <div className="bg-card text-card-foreground rounded-lg border border-border p-6">
-                        <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
-                        <div className="space-y-3">
-                            <Link href="/dashboard/text-to-image" className="flex items-center p-3 rounded-md border border-border hover:bg-accent/50 transition-colors">
-                                <Plus className="w-4 h-4 mr-2 text-primary" />
-                                <span>New Text to Image</span>
-                            </Link>
-                            <Link href="/dashboard/image-to-text" className="flex items-center p-3 rounded-md border border-border hover:bg-accent/50 transition-colors">
-                                <Image className="w-4 h-4 mr-2 text-primary" />
-                                <span>Extract Text from Image</span>
-                            </Link>
-                            <Link href="/dashboard/edit-image" className="flex items-center p-3 rounded-md border border-border hover:bg-accent/50 transition-colors">
-                                <Wand2 className="w-4 h-4 mr-2 text-primary" />
-                                <span>Edit Image with AI</span>
-                            </Link>
-                            <Link href="/dashboard/history" className="flex items-center p-3 rounded-md border border-border hover:bg-accent/50 transition-colors">
-                                <History className="w-4 h-4 mr-2 text-muted-foreground" />
-                                <span>View History</span>
-                            </Link>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

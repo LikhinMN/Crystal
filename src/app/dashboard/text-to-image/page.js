@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Loader2, Sparkles, Download, Wand2, Image as ImageIcon } from 'lucide-react';
 
-export default function TextToImagePage() {
+export default function TextToImage() {
     const [prompt, setPrompt] = useState('');
     const [negativePrompt, setNegativePrompt] = useState('');
     const [loading, setLoading] = useState(false);
