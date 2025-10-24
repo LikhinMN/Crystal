@@ -59,13 +59,6 @@ Users can generate **realistic AI images from text prompts** and also **convert 
 - **ImageKit** — Image optimization and CDN delivery
 
 ---
-## ⚙️ Installation & Run
-
-### **2. Run**
-```bash
-npm i
-npm run dev
-
 
 ## ⚙️ Installation & Setup
 
@@ -75,10 +68,10 @@ npm run dev
 git clone https://github.com/LikhinMN/Crystal.git
 cd ./Crystal
 
-## ⚙️ Installation & Run
+⚙️ Installation & Run
 
-### **2. Run**
+1. Run
 ```bash
 npm i
 npm run dev
-
+````
