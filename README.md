@@ -68,6 +68,7 @@ Users can generate **realistic AI images from text prompts** and also **convert 
 git clone https://github.com/LikhinMN/Crystal.git
 cd ./Crystal
 
+---
 
 ## ⚙️ Installation & Run
 
