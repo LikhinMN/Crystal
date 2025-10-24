@@ -67,10 +67,18 @@ Users can generate **realistic AI images from text prompts** and also **convert 
 ````bash
 git clone https://github.com/LikhinMN/Crystal.git
 cd ./Crystal
+````
+---
+## ⚙️ Installation & Run
 
-⚙️ Installation & Run
-
-1. Run
+### **1. Run**
+```bash
 npm i
 npm run dev
 ````
+
+<div align="center">
+
+# Made with ❤️ by LikhinMN — bringing AI-powered creativity to life.
+
+</div>
