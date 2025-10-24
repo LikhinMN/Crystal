@@ -71,7 +71,6 @@ cd ./Crystal
 ⚙️ Installation & Run
 
 1. Run
-```bash
 npm i
 npm run dev
 ````
