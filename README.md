@@ -25,6 +25,17 @@ This project addresses the need for a seamless interface between **text-based cr
 Users can generate **realistic AI images from text prompts** and also **convert existing images into text**, enabling new possibilities in design, content creation, and automation.
 
 ---
+## 🧩 Features
+
+✅ Text-to-Image Generation
+✅ Image-to-Text Conversion
+✅ AI Image Enhancement
+✅ Secure Authentication System
+✅ Responsive and Modern UI with Tailwind CSS
+✅ Efficient State Management with Zustand
+✅ Optimized Image Delivery via ImageKit
+
+---
 
 ## 🧰 Tech Stack
 
