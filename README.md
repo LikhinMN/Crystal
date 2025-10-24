@@ -80,9 +80,8 @@ git clone https://github.com/LikhinMN/Crystal.git
 cd ./Crystal
 ````
 ---
-## ⚙️ Installation & Run
 
-### **1. Run**
+### **2. Run**
 ```bash
 npm i
 npm run dev
