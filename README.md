@@ -79,6 +79,6 @@ npm run dev
 
 <div align="center">
 
- Made with ❤️ by LikhinMN — bringing AI-powered creativity to life.
+ Made with ❤️ by Code Crystal — bringing AI-powered creativity to life.
 
 </div>
